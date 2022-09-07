@@ -43,12 +43,12 @@ https://templatemo.com/tm-554-ocean-vibes
                         <i class="fas fa-3x fa-water"></i>
                     </a>                
                 </li>
-                <li class="tm-nav-item">
+                <!-- <li class="tm-nav-item">
                     <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
                         Gallery
                         <i class="far fa-3x fa-images"></i>
                     </a>
-                </li>
+                </li> -->
                 <li class="tm-nav-item">
                     <a href="#testimonials" data-effect="mfp-move-from-top" class="tm-nav-link">
                         Testimonials

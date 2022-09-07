@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaginasControlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,28 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PaginasControlador::class, 'welcome']);
 
-Route::get('/landingpage', function(){
-    return view('landingpage');
-});
+Route::get('/landingpage', [PaginasControlador::class, 'landingpage']);
 
-Route::get('/contacto/{test?}', function($test = null){
-    $std_field=[];
-    if($test == '1234' or $test == 1234){
-        $std_nombre="test";
-        $std_correo="test@gmail.com";
-
-        $std_field=[$std_nombre, $std_correo];
-    }
-    else{
-        $std_nombre = "";
-        $std_correo = "";
-
-        $std_field=[$std_nombre, $std_correo];
-    }
-    
-    return view('contacto', compact('std_field'));
-});
+Route::get('/contacto/{test?}', [PaginasControlador::class, 'contacto']);
