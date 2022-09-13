@@ -23,12 +23,6 @@ class PaginasControlador extends Controller
 
             $std_field=[$std_nombre, $std_correo];
         }
-        else{
-            $std_nombre = "";
-            $std_correo = "";
-
-            $std_field=[$std_nombre, $std_correo];
-        }
         
         return view('contacto', compact('std_field'));
     }
@@ -39,10 +33,14 @@ class PaginasControlador extends Controller
         /* Recibe */
         /* Validar */
         $request->validate([
-            'name' => 'required | max:32 | min:3',
-            'email' => 'required | email',
-            'message' => 'required | max:2 | min:150',
+            /* name sera requerido, con minimo de 3 y maximo de 50 */
+            'name' => 'required|max:50|min:3',
+            /* email sera requerido y con formato de email */
+            'email' => 'required|email',
+            /* Los comentarios son requeridos, con minimo de 2 y maximo de 150 */
+            'message' => 'required|min:2|max:150',
         ]);
+        echo "paso de validaciones";
         /* Insertar a BD */
         /* Redirigir */
     }

@@ -21,4 +21,4 @@ Route::get('/landingpage', [PaginasControlador::class, 'landingpage']);
 Route::get('/contacto/{test?}', [PaginasControlador::class, 'contacto']);
 
 /* Ruta para metodo de recibir informacion del formulario */
-Route::post('/recibe-form-contactos', [PaginasControlador::class, 'recibeFormContacto']);
+Route::post('/recibe-form-contacto', [PaginasControlador::class, 'recibeFormContacto']);

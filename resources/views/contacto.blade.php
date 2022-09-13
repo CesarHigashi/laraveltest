@@ -31,20 +31,29 @@
     <h1>Formulario de Contacto</h1>
 
     @if(!empty($std_field))
-        <form id="contact-form" action="/recibe-form-contactos" method="POST" class="tm-contact-form">
+        <form id="contact-form" action="/recibe-form-contacto" method="POST" class="tm-contact-form">
             @csrf
             <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" name="name" class="form-control rounded-0" placeholder="Ingrese su nombre" value="{{$std_field[0]}}" required />
+                <input type="text" name="name" class="form-control rounded-0" placeholder="Ingrese su nombre" value="{{$std_field[0]}}"/>
+                @error('name')
+                    <i>{{ $message }}</i>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="email">Correo electronico</label>
-                <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{$std_field[1]}}" required />
+                <input type="text" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{$std_field[1]}}"/>
+                @error('name')
+                    <i>{{ $message }}</i>
+                @enderror
             </div>
             </div>
             <div class="form-group">
                 <label for="message">Comentarios</label>
-                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios" required></textarea>
+                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios"></textarea>
+                @error('name')
+                    <i>{{ $message }}</i>
+                @enderror
             </div>
 
             <div class="form-group tm-text-center">
@@ -56,20 +65,29 @@
         </form>
         
     @else
-        <form id="contact-form" action="/recibe-form-contactos" method="POST" class="tm-contact-form">
+        <form id="contact-form" action="/recibe-form-contacto" method="POST" class="tm-contact-form">
             @csrf
             <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" name="name" class="form-control rounded-0" placeholder="Ingrese su nombre" required />
+                <input type="text" name="name" class="form-control rounded-0" placeholder="Ingrese su nombre" value="{{ old('name') }}"/>
+                @error('name')
+                    <i>{{ $message }}</i>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="email">Correo electronico</label>
-                <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" required />
+                <input type="text" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{ old('email') }}"/>
+                @error('email')
+                    <i>{{ $message }}</i>
+                @enderror
             </div>
             </div>
             <div class="form-group">
                 <label for="message">Comentarios</label>
-                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios" required=></textarea>
+                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios"> {{ old('message') }}</textarea>
+                @error('message')
+                    <i>{{ $message }}</i>
+                @enderror
             </div>
 
             <div class="form-group tm-text-center">
