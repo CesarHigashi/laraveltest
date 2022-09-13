@@ -61,8 +61,7 @@ https://templatemo.com/tm-554-ocean-vibes
                 <i class="fas fa-times"></i>
             </a>
             <div class="tm-row tm-intro-row">
-                <img src="img/intro.jpg" alt="Image" class="tm-intro-img">
-                <!-- Cambiar imagen a jefe maestro -->
+                <img src="img/jefe.jpg" class="tm-mb-30">
                 <div class="tm-col tm-bg-white tm-intro-pad">
                     <h2 class="tm-color-primary tm-page-title">Mi presentación</h2>
                     <div class="tm-row tm-content-row">
@@ -106,8 +105,7 @@ https://templatemo.com/tm-554-ocean-vibes
             <h2 class="tm-color-primary tm-about-col tm-mb-40 tm-page-title">Acerca de mí</h2>
             <div class="tm-row tm-about-row">
                 <div class="tm-col tm-about-col tm-about-left">                    
-                    <img src="img/about.jpg" alt="Image" class="tm-mb-30">
-                    <!-- Cambiar imagen a dory -->
+                    <img  src="img/Dory.jpeg" class="tm-mb-30">
                     <p class="tm-mb-40">
                         Comence a estudiar Ingenieria en Informatica en 2020.
                     </p>

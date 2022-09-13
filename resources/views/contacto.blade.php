@@ -60,7 +60,8 @@
                 <button type="submit" class="tm-btn tm-btn-primary">Enviar</button>
             </div>
             <div class="form-group tm-text-center">
-                <input type="button" value="Atras" class="tm-btn tm-btn-primary" onclick="history.back()"/>
+                <!-- <input type="button" value="Atras" class="tm-btn tm-btn-primary" onclick="history.back()"/> -->
+                <a class="tm-btn tm-btn-primary" href="landingpage" > Atras</a>
             </div>
         </form>
         
@@ -94,11 +95,11 @@
                 <button type="submit" class="tm-btn tm-btn-primary">Enviar</button>
             </div>
             <div class="form-group tm-text-center">
-                <input type="button" value="Atras" class="tm-btn tm-btn-primary" onclick="history.back()"/>
+                <!-- <input type="button" value="Atras" class="tm-btn tm-btn-primary" onclick="history.back()"/> -->
+                <a class="tm-btn tm-btn-primary" href="landingpage" > Atras</a>
             </div>
         </form>
         
-        <!-- <form> <input type = "button" value = "¡Regresar!" onclick = "history.back ()"> </form> -->
     @endif
     <?php
         /* $sql = "SELECT * FROM persona";
