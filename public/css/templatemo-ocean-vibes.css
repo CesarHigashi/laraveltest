@@ -54,6 +54,7 @@ div { box-sizing: border-box;}
 .tm-mb-80 { margin-bottom: 80px; }
 .tm-text-center { text-align: center; }
 .tm-text-right { text-align: right; }
+.tm-text-left { text-align: left; }
 .tm-color-primary { color: #309AFD; }
 .tm-color-gray { color: #666768; }
 .tm-color-gray-2 { color: #98999A; }

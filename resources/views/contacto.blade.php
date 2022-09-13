@@ -31,39 +31,56 @@
     <h1>Formulario de Contacto</h1>
 
     @if(!empty($std_field))
-        <form id="contact-form" action="" method="GET" class="tm-contact-form">
+        <form id="contact-form" action="/recibe-form-contactos" method="POST" class="tm-contact-form">
+            @csrf
             <div class="form-group">
-                <input type="text" name="name" class="form-control rounded-0" placeholder="Nombre" value="{{$std_field[0]}}" required />
+                <label for="name">Nombre</label>
+                <input type="text" name="name" class="form-control rounded-0" placeholder="Ingrese su nombre" value="{{$std_field[0]}}" required />
             </div>
             <div class="form-group">
-                <input type="email" name="email" class="form-control rounded-0" placeholder="Correo electronico" value="{{$std_field[1]}}" required />
+                <label for="email">Correo electronico</label>
+                <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{$std_field[1]}}" required />
             </div>
             </div>
             <div class="form-group">
-                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Comentario" required></textarea>
+                <label for="message">Comentarios</label>
+                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios" required></textarea>
             </div>
 
-            <div class="form-group tm-text-right">
+            <div class="form-group tm-text-center">
                 <button type="submit" class="tm-btn tm-btn-primary">Enviar</button>
             </div>
+            <div class="form-group tm-text-center">
+                <input type="button" value="Atras" class="tm-btn tm-btn-primary" onclick="history.back()"/>
+            </div>
         </form>
+        
     @else
-        <form id="contact-form" action="" method="GET" class="tm-contact-form">
+        <form id="contact-form" action="/recibe-form-contactos" method="POST" class="tm-contact-form">
+            @csrf
             <div class="form-group">
-                <input type="text" name="name" class="form-control rounded-0" placeholder="Nombre" required />
+                <label for="name">Nombre</label>
+                <input type="text" name="name" class="form-control rounded-0" placeholder="Ingrese su nombre" required />
             </div>
             <div class="form-group">
-                <input type="email" name="email" class="form-control rounded-0" placeholder="Correo electronico" required />
+                <label for="email">Correo electronico</label>
+                <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" required />
             </div>
             </div>
             <div class="form-group">
-                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Comentario" required=></textarea>
+                <label for="message">Comentarios</label>
+                <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios" required=></textarea>
             </div>
 
-            <div class="form-group tm-text-right">
+            <div class="form-group tm-text-center">
                 <button type="submit" class="tm-btn tm-btn-primary">Enviar</button>
             </div>
+            <div class="form-group tm-text-center">
+                <input type="button" value="Atras" class="tm-btn tm-btn-primary" onclick="history.back()"/>
+            </div>
         </form>
+        
+        <!-- <form> <input type = "button" value = "¡Regresar!" onclick = "history.back ()"> </form> -->
     @endif
     <?php
         /* $sql = "SELECT * FROM persona";

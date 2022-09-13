@@ -32,4 +32,18 @@ class PaginasControlador extends Controller
         
         return view('contacto', compact('std_field'));
     }
+
+    /* Metodo para recibir del formulario */
+    public function recibeFormContacto(Request $request){
+        /* dd($request->all()); */
+        /* Recibe */
+        /* Validar */
+        $request->validate([
+            'name' => 'required | max:32 | min:3',
+            'email' => 'required | email',
+            'message' => 'required | max:2 | min:150',
+        ]);
+        /* Insertar a BD */
+        /* Redirigir */
+    }
 }

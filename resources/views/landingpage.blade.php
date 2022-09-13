@@ -98,8 +98,6 @@ https://templatemo.com/tm-554-ocean-vibes
             </div> 
         </div>
 
-        
-        
         <div id="about" class="popup mfp-with-anim mfp-hide tm-bg-gray">
             <a href="#" class="tm-close-popup">
                 Regresar a inicio
