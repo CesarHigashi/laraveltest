@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Correo electronico</label>
-                <input type="text" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{$std_field[1]}}"/>
+                <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{$std_field[1]}}"/>
                 @error('name')
                     <i>{{ $message }}</i>
                 @enderror
