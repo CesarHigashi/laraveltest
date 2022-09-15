@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaginasControlador extends Controller
 {
@@ -40,8 +41,19 @@ class PaginasControlador extends Controller
             /* Los comentarios son requeridos, con minimo de 2 y maximo de 150 */
             'message' => 'required|min:2|max:150',
         ]);
+        
         echo "paso de validaciones";
         /* Insertar a BD */
+        /* como guardar en base de datos primera version */
+        DB::table('contactos')->insert([
+            /* $request->all() */
+            'name' => $request->name,
+            'email'=> $request->email,
+            'message'=> $request->message,
+            'created_at' => $request->now(),
+            'updated_at' => $request->now(),
+        ]);
         /* Redirigir */
+        return redirect('/contacto');
     }
 }
