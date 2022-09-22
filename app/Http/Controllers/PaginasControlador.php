@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Contacto;
 
 class PaginasControlador extends Controller
 {
@@ -30,9 +31,15 @@ class PaginasControlador extends Controller
 
     /* Metodo para recibir del formulario */
     public function recibeFormContacto(Request $request){
-        /* dd($request->all()); */
         /* Recibe */
+
+        /* Nombre de los inputs / valores que revcibe */
+        /* dd($request->all()); */
+        /* dd($request->only('name')); */
+        /* dd($request->email); */
+
         /* Validar */
+
         $request->validate([
             /* name sera requerido, con minimo de 3 y maximo de 50 */
             'name' => 'required|max:50|min:3',
@@ -43,17 +50,31 @@ class PaginasControlador extends Controller
         ]);
         
         echo "paso de validaciones";
+
         /* Insertar a BD */
-        /* como guardar en base de datos primera version */
-        DB::table('contactos')->insert([
-            /* $request->all() */
-            'name' => $request->name,
-            'email'=> $request->email,
-            'message'=> $request->message,
-            'created_at' => $request->now(),
-            'updated_at' => $request->now(),
+
+        /* Guardar segunda version, con modelo */
+        Contacto::create([
+            'name'=> $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
         ]);
+        /* Si las columans se llaman igual que los inputs, se puede usar lo siguiente */
+        /* Contacto::create($request->all()); */
+
+        /* como guardar en base de datos primera version */
+        //DB::table('contactos')->insert([
+            /* $request->all() */
+            /* Columnas / lo que viene del formulario */
+        //    'name' => $request->name,
+        //    'email'=> $request->email,
+        //    'message'=> $request->message,
+        //    'created_at' => now(),
+        //    'updated_at' => now(),
+        //]);
+
         /* Redirigir */
+        
         return redirect('/contacto');
     }
 }
