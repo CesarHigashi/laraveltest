@@ -43,7 +43,7 @@
             <div class="form-group">
                 <label for="email">Correo electronico</label>
                 <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese un email para contacto" value="{{$std_field[1]}}"/>
-                @error('name')
+                @error('email')
                     <i>{{ $message }}</i>
                 @enderror
             </div>
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label for="message">Comentarios</label>
                 <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Ingrese sus comentarios"></textarea>
-                @error('name')
+                @error('message')
                     <i>{{ $message }}</i>
                 @enderror
             </div>
